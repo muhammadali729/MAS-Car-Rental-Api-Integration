@@ -3,6 +3,14 @@ import CarGrid from '@/components/CarGrid'
 import { getCars } from '@/lib/actions/carActions'
 import { client } from '@/sanity/lib/client';
 
+
+export interface CarType {
+  tags: string[];
+  _id: string | null | undefined; // Updated `Key` to `string`
+  imageUrl: string | undefined;
+  pricePerDay: number | undefined;
+  transmission: string | undefined;
+}
 export default async function Home() {
   const cars = await getCars()
 
